@@ -5,6 +5,7 @@ class Solution:
     def __init__(self):
         self.data = get_data(year=2023, day=2).splitlines() #gets the aocd input from sessionId via package
 
+    #splitting the data to get a nice dict
     def splitData(self):
         dataDict = {}
         for line in self.data:
@@ -19,6 +20,7 @@ class Solution:
                 dataDict[numberId].append(gameDict)
         return dataDict
 
+    #part 2
     def part1(self, getData):
         valueOfPossibleGames = 0
         searchedBag = {'red': 12, 'green': 13, 'blue': 14} #the bag we are searching for
@@ -35,6 +37,7 @@ class Solution:
                 print('Game: ' + game + ' is possible')
         return valueOfPossibleGames
 
+    #part 2
     def part2(self, getData):
         totalValue = 0
         for game in getData.keys():
@@ -44,7 +47,7 @@ class Solution:
                     if int(highestValue[color]) < int(pulls[color]):
                         highestValue[color] = pulls[color]
             product = reduce(lambda x, y: x * y, [int(highestValue[color]) for color in
-                                                  highestValue.keys()])  # Use the reduce function to multiply the values of all colors in the highest_value dict
+                                                  highestValue.keys()])  # Use the reduce function to multiply the values of all colors
             print(f"Game {game} has a minimum power of {product}")
             totalValue += product
 
@@ -52,10 +55,14 @@ class Solution:
 
 
 if __name__ == '__main__':
+    #creating an instance of the solution class
     solution = Solution()
+
+    #triggering the defs to generate the answers
     answer1 = solution.part1(solution.splitData())
     answer2 = solution.part2(solution.splitData())
 
+    #printing the answers
     print("Answers:")
     print(f"The answer of part one = {answer1}")
     print(f"The answer of part two = {answer2}")
