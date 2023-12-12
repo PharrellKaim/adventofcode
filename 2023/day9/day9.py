@@ -21,5 +21,7 @@ for history in histories:
     p2 += diff
 
 print("Answers: ")
-print("Solution Part 1: "+total)
-print("Solution Part 2: "+p2)
+print("Solution Part 1: ")
+print(total)
+print("Solution Part 2: ")
+print(p2)
