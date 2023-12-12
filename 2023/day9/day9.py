@@ -20,5 +20,6 @@ for history in histories:
         diff = descent[0] - diff
     p2 += diff
 
-print(total)
-print(p2)
+print("Answers: ")
+print("Solution Part 1: "+total)
+print("Solution Part 2: "+p2)
